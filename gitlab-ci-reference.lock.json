@@ -1,0 +1,79 @@
+{
+  "lockfileVersion": 1,
+  "retrieved": "2026-09-05",
+  "revision": "d2a2c734eb11154c28887bb0522f07866742886e",
+  "sources": [
+    {
+      "path": "app/assets/javascripts/editor/schema/ci.json",
+      "sha256": "a4dc2b155aa574575fbfd51dcca99388db5ba1b563ab5e05ce8df005e7eb9ced"
+    },
+    {
+      "path": "doc/ci/inputs/_index.md",
+      "sha256": "136249fd1b5b88d7894c1d2b04a0c98099e8a30b990d37eb7e6171661c28fcf6"
+    },
+    {
+      "path": "doc/ci/jobs/job_rules.md",
+      "sha256": "758f791a8c845086f8e66cca772ffacb94c6bfa7a55e5882e323bf55727644b2"
+    },
+    {
+      "path": "doc/ci/variables/predefined_variables.md",
+      "sha256": "48d8916a8346084d055e3f03f2c36cb8c29f281c1cb5c505bdd3ed3388d5ea75"
+    },
+    {
+      "path": "doc/ci/yaml/_index.md",
+      "sha256": "ba74818de0fb2a0e99e6bc7d93236741ce187c23819d54408f675db04432ae53"
+    },
+    {
+      "path": "doc/ci/yaml/artifacts_reports.md",
+      "sha256": "46f9be4d55c9155a51bc424a9106f09341c0d8f39cd62fadbc643e4713181517"
+    },
+    {
+      "path": "doc/ci/yaml/deprecated_keywords.md",
+      "sha256": "0eb16a170c088001ede1f29e2dbe48e26f505c0369513b3816c1d51547ed40b0"
+    },
+    {
+      "path": "doc/ci/yaml/expressions.md",
+      "sha256": "6a611c6419abc27ed9a66f9a8715ec04555be009557ef2b08409fa8db75efe19"
+    },
+    {
+      "path": "doc/ci/yaml/includes.md",
+      "sha256": "09e6af2f959218da6de8825eba9141e886b47388fae0accfb8d15ab103f65511"
+    },
+    {
+      "path": "doc/ci/yaml/lint.md",
+      "sha256": "dfed718f5bb8abd41a18fed2ba446ecc49e6714e660850ce5d5d6fdcf8687659"
+    },
+    {
+      "path": "doc/ci/yaml/matrix_expressions.md",
+      "sha256": "b39c3954f0006d3bf37584bbe815a2d2028718847a028f26bdb190963d694950"
+    },
+    {
+      "path": "doc/ci/yaml/needs.md",
+      "sha256": "3905cb0ff06be90dca6ef9b2693a7259263d84514387359d2f04fdb4b70c784c"
+    },
+    {
+      "path": "doc/ci/yaml/script_troubleshooting.md",
+      "sha256": "8c90ad88b2c5608d2cfe2197fb25cc51b94dd5f1bf7f82fd1e2fbaf31724921a"
+    },
+    {
+      "path": "doc/ci/yaml/script.md",
+      "sha256": "2deeb8192dbe8d5f8fe2cf0905966ea896fa2688d18100b926e0ba3412fc7e14"
+    },
+    {
+      "path": "doc/ci/yaml/signing_examples.md",
+      "sha256": "4aec5a75ba730cae0b1a3525e7a9d237b6c12451995ae7cd7c6f39956e844e0c"
+    },
+    {
+      "path": "doc/ci/yaml/signing_self_hosted.md",
+      "sha256": "364f734dfd60a18d90c73aa958d53ea331fe4773295bffeda644bc60191f5793"
+    },
+    {
+      "path": "doc/ci/yaml/workflow.md",
+      "sha256": "dae8131d17765e94290c36418a9c5149ba3393f1e6aa7d43c0d33bef005b1904"
+    },
+    {
+      "path": "doc/ci/yaml/yaml_optimization.md",
+      "sha256": "0e58efb39f805d58f0ca2fefe16a977c5f2755c716de2ab028526fe4b224bc09"
+    }
+  ]
+}

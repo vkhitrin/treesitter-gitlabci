@@ -1,0 +1,48 @@
+[tools]
+node = "26.8.1"
+viteplus = "0.3.0"
+python = "3.14.7"
+clang = "23.1.0"
+
+[env]
+PYTHON = "python3"
+CC = "clang"
+CXX = "clang --driver-mode=g++"
+
+[tasks.default]
+description = "Generate, build, and test the parser"
+depends = ["test"]
+
+[tasks.setup]
+description = "Install locked dependencies"
+env = { GITLAB_CI_SKIP_BUILD = "1" }
+run = "vp install --frozen-lockfile"
+
+[tasks.generate]
+description = "Generate the parser with Tree-sitter ABI 15"
+depends = ["setup"]
+run = "vp exec tree-sitter generate --abi 15 && node scripts/generate-queries.cjs"
+
+[tasks.build]
+description = "Build the Node binding"
+depends = ["generate"]
+run = "vp exec node-gyp rebuild"
+
+[tasks.test]
+description = "Run the grammar corpus, query checks, and integration tests"
+depends = ["build"]
+run = "vp exec tree-sitter test && node --test test/*.test.cjs"
+
+[tasks.parse]
+description = "Print a GitLab CI syntax tree for a supplied file"
+depends = ["generate"]
+run = "vp exec tree-sitter parse --grammar-path ."
+
+[tasks."reference:sync"]
+description = "Refresh the pinned GitLab structural reference, optionally at a supplied ref"
+depends = ["setup"]
+run = "node scripts/sync-reference.cjs"
+
+[tasks."reference:diff"]
+description = "Log the pinned GitLab docs revision and diff it against upstream master or a supplied ref"
+run = "node scripts/diff-reference.cjs"

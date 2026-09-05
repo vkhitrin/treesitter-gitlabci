@@ -1,0 +1,10 @@
+{
+  "needs:pipeline:job": {
+    "paths": ["needs:pipeline", "needs:job"],
+    "reason": "The documentation heading describes sibling pipeline and job keys in one needs entry."
+  },
+  "external_link": {
+    "paths": [],
+    "reason": "This is a field in the JSON annotations report artifact, not a CI YAML configuration keyword."
+  }
+}

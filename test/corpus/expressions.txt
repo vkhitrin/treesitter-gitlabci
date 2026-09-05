@@ -1,0 +1,146 @@
+==================
+inputs
+==================
+$[[ inputs.job-stage ]]
+
+---
+
+(stream
+  (template
+    (interpolation
+      (access
+        (identifier)
+        (identifier)))))
+
+==================
+matrix and component
+==================
+image:$[[ component.name ]]:$[[ component.version ]]-$[[ matrix.OS ]]
+
+---
+
+(stream
+  (template
+    (text)
+    (interpolation
+      (access
+        (identifier)
+        (identifier)))
+    (text)
+    (interpolation
+      (access
+        (identifier)
+        (identifier)))
+    (text)
+    (interpolation
+      (access
+        (identifier)
+        (identifier)))))
+
+==================
+function pipeline
+==================
+$[[ inputs.test | expand_vars | truncate(5,8) | posix_escape ]]
+
+---
+
+(stream
+  (template
+    (interpolation
+      (access
+        (identifier)
+        (identifier))
+      (function_call
+        (identifier))
+      (function_call
+        (identifier)
+        (argument_list
+          (integer)
+          (integer)))
+      (function_call
+        (identifier)))))
+
+==================
+split string argument
+==================
+$[[ inputs.tags | split(',') ]]
+
+---
+
+(stream
+  (template
+    (interpolation
+      (access
+        (identifier)
+        (identifier))
+      (function_call
+        (identifier)
+        (argument_list
+          (string
+            (string_content)))))))
+
+==================
+array and property indexing
+==================
+$[[ inputs.servers[0].host ]] / $[[ inputs.matrix[0][1] ]]
+
+---
+
+(stream
+  (template
+    (interpolation
+      (access
+        (identifier)
+        (identifier)
+        (index
+          (integer))
+        (identifier)))
+    (text)
+    (interpolation
+      (access
+        (identifier)
+        (identifier)
+        (index
+          (integer))
+        (index
+          (integer))))))
+
+==================
+adjacent expressions and dollars
+==================
+$$[[ inputs.x ]]$[[ inputs.y ]]$[
+
+---
+
+(stream
+  (template
+    (text)
+    (interpolation
+      (access
+        (identifier)
+        (identifier)))
+    (interpolation
+      (access
+        (identifier)
+        (identifier)))
+    (text)))
+
+==================
+multiline interpolation
+==================
+echo $[[
+  inputs.command
+  | expand_vars
+]]
+
+---
+
+(stream
+  (template
+    (text)
+    (interpolation
+      (access
+        (identifier)
+        (identifier))
+      (function_call
+        (identifier)))))

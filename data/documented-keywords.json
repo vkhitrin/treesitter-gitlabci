@@ -1,0 +1,1040 @@
+{
+  "revision": "d2a2c734eb11154c28887bb0522f07866742886e",
+  "headings": [
+    {
+      "file": "_index.md",
+      "heading": "default",
+      "path": "default"
+    },
+    {
+      "file": "_index.md",
+      "heading": "include",
+      "path": "include"
+    },
+    {
+      "file": "_index.md",
+      "heading": "include:component",
+      "path": "include:component"
+    },
+    {
+      "file": "_index.md",
+      "heading": "include:local",
+      "path": "include:local"
+    },
+    {
+      "file": "_index.md",
+      "heading": "include:project",
+      "path": "include:project"
+    },
+    {
+      "file": "_index.md",
+      "heading": "include:remote",
+      "path": "include:remote"
+    },
+    {
+      "file": "_index.md",
+      "heading": "include:template",
+      "path": "include:template"
+    },
+    {
+      "file": "_index.md",
+      "heading": "include:inputs",
+      "path": "include:inputs"
+    },
+    {
+      "file": "_index.md",
+      "heading": "include:rules",
+      "path": "include:rules"
+    },
+    {
+      "file": "_index.md",
+      "heading": "include:integrity",
+      "path": "include:integrity"
+    },
+    {
+      "file": "_index.md",
+      "heading": "include:cache",
+      "path": "include:cache"
+    },
+    {
+      "file": "_index.md",
+      "heading": "stages",
+      "path": "stages"
+    },
+    {
+      "file": "_index.md",
+      "heading": "workflow",
+      "path": "workflow"
+    },
+    {
+      "file": "_index.md",
+      "heading": "workflow:auto_cancel:on_new_commit",
+      "path": "workflow:auto_cancel:on_new_commit"
+    },
+    {
+      "file": "_index.md",
+      "heading": "workflow:auto_cancel:on_job_failure",
+      "path": "workflow:auto_cancel:on_job_failure"
+    },
+    {
+      "file": "_index.md",
+      "heading": "workflow:name",
+      "path": "workflow:name"
+    },
+    {
+      "file": "_index.md",
+      "heading": "workflow:rules",
+      "path": "workflow:rules"
+    },
+    {
+      "file": "_index.md",
+      "heading": "workflow:rules:variables",
+      "path": "workflow:rules:variables"
+    },
+    {
+      "file": "_index.md",
+      "heading": "workflow:rules:auto_cancel",
+      "path": "workflow:rules:auto_cancel"
+    },
+    {
+      "file": "_index.md",
+      "heading": "spec",
+      "path": "spec"
+    },
+    {
+      "file": "_index.md",
+      "heading": "spec:inputs",
+      "path": "spec:inputs"
+    },
+    {
+      "file": "_index.md",
+      "heading": "spec:inputs:default",
+      "path": "spec:inputs:default"
+    },
+    {
+      "file": "_index.md",
+      "heading": "spec:inputs:description",
+      "path": "spec:inputs:description"
+    },
+    {
+      "file": "_index.md",
+      "heading": "spec:inputs:options",
+      "path": "spec:inputs:options"
+    },
+    {
+      "file": "_index.md",
+      "heading": "spec:inputs:regex",
+      "path": "spec:inputs:regex"
+    },
+    {
+      "file": "_index.md",
+      "heading": "spec:inputs:rules",
+      "path": "spec:inputs:rules"
+    },
+    {
+      "file": "_index.md",
+      "heading": "spec:inputs:type",
+      "path": "spec:inputs:type"
+    },
+    {
+      "file": "_index.md",
+      "heading": "spec:include",
+      "path": "spec:include"
+    },
+    {
+      "file": "_index.md",
+      "heading": "spec:component",
+      "path": "spec:component"
+    },
+    {
+      "file": "_index.md",
+      "heading": "spec:description",
+      "path": "spec:description"
+    },
+    {
+      "file": "_index.md",
+      "heading": "after_script",
+      "path": "after_script"
+    },
+    {
+      "file": "_index.md",
+      "heading": "allow_failure",
+      "path": "allow_failure"
+    },
+    {
+      "file": "_index.md",
+      "heading": "allow_failure:exit_codes",
+      "path": "allow_failure:exit_codes"
+    },
+    {
+      "file": "_index.md",
+      "heading": "artifacts",
+      "path": "artifacts"
+    },
+    {
+      "file": "_index.md",
+      "heading": "artifacts:paths",
+      "path": "artifacts:paths"
+    },
+    {
+      "file": "_index.md",
+      "heading": "artifacts:exclude",
+      "path": "artifacts:exclude"
+    },
+    {
+      "file": "_index.md",
+      "heading": "artifacts:expire_in",
+      "path": "artifacts:expire_in"
+    },
+    {
+      "file": "_index.md",
+      "heading": "artifacts:expose_as",
+      "path": "artifacts:expose_as"
+    },
+    {
+      "file": "_index.md",
+      "heading": "artifacts:name",
+      "path": "artifacts:name"
+    },
+    {
+      "file": "_index.md",
+      "heading": "artifacts:public",
+      "path": "artifacts:public"
+    },
+    {
+      "file": "_index.md",
+      "heading": "artifacts:access",
+      "path": "artifacts:access"
+    },
+    {
+      "file": "_index.md",
+      "heading": "artifacts:reports",
+      "path": "artifacts:reports"
+    },
+    {
+      "file": "_index.md",
+      "heading": "artifacts:untracked",
+      "path": "artifacts:untracked"
+    },
+    {
+      "file": "_index.md",
+      "heading": "artifacts:when",
+      "path": "artifacts:when"
+    },
+    {
+      "file": "_index.md",
+      "heading": "before_script",
+      "path": "before_script"
+    },
+    {
+      "file": "_index.md",
+      "heading": "cache",
+      "path": "cache"
+    },
+    {
+      "file": "_index.md",
+      "heading": "cache:paths",
+      "path": "cache:paths"
+    },
+    {
+      "file": "_index.md",
+      "heading": "cache:key",
+      "path": "cache:key"
+    },
+    {
+      "file": "_index.md",
+      "heading": "cache:key:files",
+      "path": "cache:key:files"
+    },
+    {
+      "file": "_index.md",
+      "heading": "cache:key:files_commits",
+      "path": "cache:key:files_commits"
+    },
+    {
+      "file": "_index.md",
+      "heading": "cache:key:prefix",
+      "path": "cache:key:prefix"
+    },
+    {
+      "file": "_index.md",
+      "heading": "cache:untracked",
+      "path": "cache:untracked"
+    },
+    {
+      "file": "_index.md",
+      "heading": "cache:unprotect",
+      "path": "cache:unprotect"
+    },
+    {
+      "file": "_index.md",
+      "heading": "cache:when",
+      "path": "cache:when"
+    },
+    {
+      "file": "_index.md",
+      "heading": "cache:policy",
+      "path": "cache:policy"
+    },
+    {
+      "file": "_index.md",
+      "heading": "cache:fallback_keys",
+      "path": "cache:fallback_keys"
+    },
+    {
+      "file": "_index.md",
+      "heading": "coverage",
+      "path": "coverage"
+    },
+    {
+      "file": "_index.md",
+      "heading": "dast_configuration",
+      "path": "dast_configuration"
+    },
+    {
+      "file": "_index.md",
+      "heading": "dependencies",
+      "path": "dependencies"
+    },
+    {
+      "file": "_index.md",
+      "heading": "environment",
+      "path": "environment"
+    },
+    {
+      "file": "_index.md",
+      "heading": "environment:name",
+      "path": "environment:name"
+    },
+    {
+      "file": "_index.md",
+      "heading": "environment:url",
+      "path": "environment:url"
+    },
+    {
+      "file": "_index.md",
+      "heading": "environment:on_stop",
+      "path": "environment:on_stop"
+    },
+    {
+      "file": "_index.md",
+      "heading": "environment:action",
+      "path": "environment:action"
+    },
+    {
+      "file": "_index.md",
+      "heading": "environment:auto_stop_in",
+      "path": "environment:auto_stop_in"
+    },
+    {
+      "file": "_index.md",
+      "heading": "environment:kubernetes",
+      "path": "environment:kubernetes"
+    },
+    {
+      "file": "_index.md",
+      "heading": "environment:deployment_tier",
+      "path": "environment:deployment_tier"
+    },
+    {
+      "file": "_index.md",
+      "heading": "extends",
+      "path": "extends"
+    },
+    {
+      "file": "_index.md",
+      "heading": "hooks",
+      "path": "hooks"
+    },
+    {
+      "file": "_index.md",
+      "heading": "hooks:pre_get_sources_script",
+      "path": "hooks:pre_get_sources_script"
+    },
+    {
+      "file": "_index.md",
+      "heading": "identity",
+      "path": "identity"
+    },
+    {
+      "file": "_index.md",
+      "heading": "id_tokens",
+      "path": "id_tokens"
+    },
+    {
+      "file": "_index.md",
+      "heading": "image",
+      "path": "image"
+    },
+    {
+      "file": "_index.md",
+      "heading": "image:name",
+      "path": "image:name"
+    },
+    {
+      "file": "_index.md",
+      "heading": "image:entrypoint",
+      "path": "image:entrypoint"
+    },
+    {
+      "file": "_index.md",
+      "heading": "image:docker",
+      "path": "image:docker"
+    },
+    {
+      "file": "_index.md",
+      "heading": "image:kubernetes",
+      "path": "image:kubernetes"
+    },
+    {
+      "file": "_index.md",
+      "heading": "image:pull_policy",
+      "path": "image:pull_policy"
+    },
+    {
+      "file": "_index.md",
+      "heading": "inputs",
+      "path": "inputs"
+    },
+    {
+      "file": "_index.md",
+      "heading": "inputs:default",
+      "path": "inputs:default"
+    },
+    {
+      "file": "_index.md",
+      "heading": "inputs:type",
+      "path": "inputs:type"
+    },
+    {
+      "file": "_index.md",
+      "heading": "inputs:description",
+      "path": "inputs:description"
+    },
+    {
+      "file": "_index.md",
+      "heading": "inputs:options",
+      "path": "inputs:options"
+    },
+    {
+      "file": "_index.md",
+      "heading": "inputs:regex",
+      "path": "inputs:regex"
+    },
+    {
+      "file": "_index.md",
+      "heading": "inherit",
+      "path": "inherit"
+    },
+    {
+      "file": "_index.md",
+      "heading": "inherit:default",
+      "path": "inherit:default"
+    },
+    {
+      "file": "_index.md",
+      "heading": "inherit:variables",
+      "path": "inherit:variables"
+    },
+    {
+      "file": "_index.md",
+      "heading": "interruptible",
+      "path": "interruptible"
+    },
+    {
+      "file": "_index.md",
+      "heading": "needs",
+      "path": "needs"
+    },
+    {
+      "file": "_index.md",
+      "heading": "needs:artifacts",
+      "path": "needs:artifacts"
+    },
+    {
+      "file": "_index.md",
+      "heading": "needs:project",
+      "path": "needs:project"
+    },
+    {
+      "file": "_index.md",
+      "heading": "needs:pipeline:job",
+      "path": "needs:pipeline:job"
+    },
+    {
+      "file": "_index.md",
+      "heading": "needs:optional",
+      "path": "needs:optional"
+    },
+    {
+      "file": "_index.md",
+      "heading": "needs:pipeline",
+      "path": "needs:pipeline"
+    },
+    {
+      "file": "_index.md",
+      "heading": "needs:parallel:matrix",
+      "path": "needs:parallel:matrix"
+    },
+    {
+      "file": "_index.md",
+      "heading": "pages",
+      "path": "pages"
+    },
+    {
+      "file": "_index.md",
+      "heading": "pages.publish",
+      "path": "pages:publish"
+    },
+    {
+      "file": "_index.md",
+      "heading": "pages.path_prefix",
+      "path": "pages:path_prefix"
+    },
+    {
+      "file": "_index.md",
+      "heading": "pages.expire_in",
+      "path": "pages:expire_in"
+    },
+    {
+      "file": "_index.md",
+      "heading": "parallel",
+      "path": "parallel"
+    },
+    {
+      "file": "_index.md",
+      "heading": "parallel:matrix",
+      "path": "parallel:matrix"
+    },
+    {
+      "file": "_index.md",
+      "heading": "release",
+      "path": "release"
+    },
+    {
+      "file": "_index.md",
+      "heading": "release:tag_name",
+      "path": "release:tag_name"
+    },
+    {
+      "file": "_index.md",
+      "heading": "release:tag_message",
+      "path": "release:tag_message"
+    },
+    {
+      "file": "_index.md",
+      "heading": "release:name",
+      "path": "release:name"
+    },
+    {
+      "file": "_index.md",
+      "heading": "release:description",
+      "path": "release:description"
+    },
+    {
+      "file": "_index.md",
+      "heading": "release:ref",
+      "path": "release:ref"
+    },
+    {
+      "file": "_index.md",
+      "heading": "release:milestones",
+      "path": "release:milestones"
+    },
+    {
+      "file": "_index.md",
+      "heading": "release:released_at",
+      "path": "release:released_at"
+    },
+    {
+      "file": "_index.md",
+      "heading": "release:assets:links",
+      "path": "release:assets:links"
+    },
+    {
+      "file": "_index.md",
+      "heading": "resource_group",
+      "path": "resource_group"
+    },
+    {
+      "file": "_index.md",
+      "heading": "retry",
+      "path": "retry"
+    },
+    {
+      "file": "_index.md",
+      "heading": "retry:when",
+      "path": "retry:when"
+    },
+    {
+      "file": "_index.md",
+      "heading": "retry:exit_codes",
+      "path": "retry:exit_codes"
+    },
+    {
+      "file": "_index.md",
+      "heading": "rules",
+      "path": "rules"
+    },
+    {
+      "file": "_index.md",
+      "heading": "rules:if",
+      "path": "rules:if"
+    },
+    {
+      "file": "_index.md",
+      "heading": "rules:changes",
+      "path": "rules:changes"
+    },
+    {
+      "file": "_index.md",
+      "heading": "rules:changes:paths",
+      "path": "rules:changes:paths"
+    },
+    {
+      "file": "_index.md",
+      "heading": "rules:changes:compare_to",
+      "path": "rules:changes:compare_to"
+    },
+    {
+      "file": "_index.md",
+      "heading": "rules:changes:regexp",
+      "path": "rules:changes:regexp"
+    },
+    {
+      "file": "_index.md",
+      "heading": "rules:exists",
+      "path": "rules:exists"
+    },
+    {
+      "file": "_index.md",
+      "heading": "rules:exists:paths",
+      "path": "rules:exists:paths"
+    },
+    {
+      "file": "_index.md",
+      "heading": "rules:exists:project",
+      "path": "rules:exists:project"
+    },
+    {
+      "file": "_index.md",
+      "heading": "rules:exists:regexp",
+      "path": "rules:exists:regexp"
+    },
+    {
+      "file": "_index.md",
+      "heading": "rules:when",
+      "path": "rules:when"
+    },
+    {
+      "file": "_index.md",
+      "heading": "rules:allow_failure",
+      "path": "rules:allow_failure"
+    },
+    {
+      "file": "_index.md",
+      "heading": "rules:needs",
+      "path": "rules:needs"
+    },
+    {
+      "file": "_index.md",
+      "heading": "rules:variables",
+      "path": "rules:variables"
+    },
+    {
+      "file": "_index.md",
+      "heading": "rules:interruptible",
+      "path": "rules:interruptible"
+    },
+    {
+      "file": "_index.md",
+      "heading": "run",
+      "path": "run"
+    },
+    {
+      "file": "_index.md",
+      "heading": "script",
+      "path": "script"
+    },
+    {
+      "file": "_index.md",
+      "heading": "secrets",
+      "path": "secrets"
+    },
+    {
+      "file": "_index.md",
+      "heading": "secrets:vault",
+      "path": "secrets:vault"
+    },
+    {
+      "file": "_index.md",
+      "heading": "secrets:gcp_secret_manager",
+      "path": "secrets:gcp_secret_manager"
+    },
+    {
+      "file": "_index.md",
+      "heading": "secrets:gitlab_secrets_manager",
+      "path": "secrets:gitlab_secrets_manager"
+    },
+    {
+      "file": "_index.md",
+      "heading": "secrets:azure_key_vault",
+      "path": "secrets:azure_key_vault"
+    },
+    {
+      "file": "_index.md",
+      "heading": "secrets:file",
+      "path": "secrets:file"
+    },
+    {
+      "file": "_index.md",
+      "heading": "secrets:token",
+      "path": "secrets:token"
+    },
+    {
+      "file": "_index.md",
+      "heading": "services",
+      "path": "services"
+    },
+    {
+      "file": "_index.md",
+      "heading": "services:name",
+      "path": "services:name"
+    },
+    {
+      "file": "_index.md",
+      "heading": "services:alias",
+      "path": "services:alias"
+    },
+    {
+      "file": "_index.md",
+      "heading": "services:docker",
+      "path": "services:docker"
+    },
+    {
+      "file": "_index.md",
+      "heading": "services:kubernetes",
+      "path": "services:kubernetes"
+    },
+    {
+      "file": "_index.md",
+      "heading": "services:entrypoint",
+      "path": "services:entrypoint"
+    },
+    {
+      "file": "_index.md",
+      "heading": "services:command",
+      "path": "services:command"
+    },
+    {
+      "file": "_index.md",
+      "heading": "services:variables",
+      "path": "services:variables"
+    },
+    {
+      "file": "_index.md",
+      "heading": "services:pull_policy",
+      "path": "services:pull_policy"
+    },
+    {
+      "file": "_index.md",
+      "heading": "stage",
+      "path": "stage"
+    },
+    {
+      "file": "_index.md",
+      "heading": "tags",
+      "path": "tags"
+    },
+    {
+      "file": "_index.md",
+      "heading": "timeout",
+      "path": "timeout"
+    },
+    {
+      "file": "_index.md",
+      "heading": "trigger",
+      "path": "trigger"
+    },
+    {
+      "file": "_index.md",
+      "heading": "trigger:inputs",
+      "path": "trigger:inputs"
+    },
+    {
+      "file": "_index.md",
+      "heading": "trigger:include",
+      "path": "trigger:include"
+    },
+    {
+      "file": "_index.md",
+      "heading": "trigger:include:inputs",
+      "path": "trigger:include:inputs"
+    },
+    {
+      "file": "_index.md",
+      "heading": "trigger:project",
+      "path": "trigger:project"
+    },
+    {
+      "file": "_index.md",
+      "heading": "trigger:strategy",
+      "path": "trigger:strategy"
+    },
+    {
+      "file": "_index.md",
+      "heading": "trigger:forward",
+      "path": "trigger:forward"
+    },
+    {
+      "file": "_index.md",
+      "heading": "when",
+      "path": "when"
+    },
+    {
+      "file": "_index.md",
+      "heading": "manual_confirmation",
+      "path": "manual_confirmation"
+    },
+    {
+      "file": "_index.md",
+      "heading": "start_in",
+      "path": "start_in"
+    },
+    {
+      "file": "_index.md",
+      "heading": "variables",
+      "path": "variables"
+    },
+    {
+      "file": "_index.md",
+      "heading": "variables",
+      "path": "variables"
+    },
+    {
+      "file": "_index.md",
+      "heading": "variables",
+      "path": "variables"
+    },
+    {
+      "file": "_index.md",
+      "heading": "variables:description",
+      "path": "variables:description"
+    },
+    {
+      "file": "_index.md",
+      "heading": "variables:value",
+      "path": "variables:value"
+    },
+    {
+      "file": "_index.md",
+      "heading": "variables:options",
+      "path": "variables:options"
+    },
+    {
+      "file": "_index.md",
+      "heading": "variables:expand",
+      "path": "variables:expand"
+    },
+    {
+      "file": "artifacts_reports.md",
+      "heading": "artifacts:reports:accessibility",
+      "path": "artifacts:reports:accessibility"
+    },
+    {
+      "file": "artifacts_reports.md",
+      "heading": "artifacts:reports:annotations",
+      "path": "artifacts:reports:annotations"
+    },
+    {
+      "file": "artifacts_reports.md",
+      "heading": "external_link",
+      "path": "external_link"
+    },
+    {
+      "file": "artifacts_reports.md",
+      "heading": "artifacts:reports:api_fuzzing",
+      "path": "artifacts:reports:api_fuzzing"
+    },
+    {
+      "file": "artifacts_reports.md",
+      "heading": "artifacts:reports:browser_performance",
+      "path": "artifacts:reports:browser_performance"
+    },
+    {
+      "file": "artifacts_reports.md",
+      "heading": "artifacts:reports:coverage_report",
+      "path": "artifacts:reports:coverage_report"
+    },
+    {
+      "file": "artifacts_reports.md",
+      "heading": "artifacts:reports:codequality",
+      "path": "artifacts:reports:codequality"
+    },
+    {
+      "file": "artifacts_reports.md",
+      "heading": "artifacts:reports:container_scanning",
+      "path": "artifacts:reports:container_scanning"
+    },
+    {
+      "file": "artifacts_reports.md",
+      "heading": "artifacts:reports:coverage_fuzzing",
+      "path": "artifacts:reports:coverage_fuzzing"
+    },
+    {
+      "file": "artifacts_reports.md",
+      "heading": "artifacts:reports:cyclonedx",
+      "path": "artifacts:reports:cyclonedx"
+    },
+    {
+      "file": "artifacts_reports.md",
+      "heading": "artifacts:reports:dast",
+      "path": "artifacts:reports:dast"
+    },
+    {
+      "file": "artifacts_reports.md",
+      "heading": "artifacts:reports:dependency_scanning",
+      "path": "artifacts:reports:dependency_scanning"
+    },
+    {
+      "file": "artifacts_reports.md",
+      "heading": "artifacts:reports:dotenv",
+      "path": "artifacts:reports:dotenv"
+    },
+    {
+      "file": "artifacts_reports.md",
+      "heading": "artifacts:reports:junit",
+      "path": "artifacts:reports:junit"
+    },
+    {
+      "file": "artifacts_reports.md",
+      "heading": "artifacts:reports:load_performance",
+      "path": "artifacts:reports:load_performance"
+    },
+    {
+      "file": "artifacts_reports.md",
+      "heading": "artifacts:reports:metrics",
+      "path": "artifacts:reports:metrics"
+    },
+    {
+      "file": "artifacts_reports.md",
+      "heading": "artifacts:reports:requirements",
+      "path": "artifacts:reports:requirements"
+    },
+    {
+      "file": "artifacts_reports.md",
+      "heading": "artifacts:reports:sarif",
+      "path": "artifacts:reports:sarif"
+    },
+    {
+      "file": "artifacts_reports.md",
+      "heading": "artifacts:reports:sast",
+      "path": "artifacts:reports:sast"
+    },
+    {
+      "file": "artifacts_reports.md",
+      "heading": "artifacts:reports:secret_detection",
+      "path": "artifacts:reports:secret_detection"
+    },
+    {
+      "file": "artifacts_reports.md",
+      "heading": "artifacts:reports:terraform",
+      "path": "artifacts:reports:terraform"
+    },
+    {
+      "file": "deprecated_keywords.md",
+      "heading": "image",
+      "path": "image"
+    },
+    {
+      "file": "deprecated_keywords.md",
+      "heading": "services",
+      "path": "services"
+    },
+    {
+      "file": "deprecated_keywords.md",
+      "heading": "cache",
+      "path": "cache"
+    },
+    {
+      "file": "deprecated_keywords.md",
+      "heading": "before_script",
+      "path": "before_script"
+    },
+    {
+      "file": "deprecated_keywords.md",
+      "heading": "after_script",
+      "path": "after_script"
+    },
+    {
+      "file": "deprecated_keywords.md",
+      "heading": "only",
+      "path": "only"
+    },
+    {
+      "file": "deprecated_keywords.md",
+      "heading": "except",
+      "path": "except"
+    },
+    {
+      "file": "deprecated_keywords.md",
+      "heading": "only:refs",
+      "path": "only:refs"
+    },
+    {
+      "file": "deprecated_keywords.md",
+      "heading": "except:refs",
+      "path": "except:refs"
+    },
+    {
+      "file": "deprecated_keywords.md",
+      "heading": "only:variables",
+      "path": "only:variables"
+    },
+    {
+      "file": "deprecated_keywords.md",
+      "heading": "except:variables",
+      "path": "except:variables"
+    },
+    {
+      "file": "deprecated_keywords.md",
+      "heading": "only:changes",
+      "path": "only:changes"
+    },
+    {
+      "file": "deprecated_keywords.md",
+      "heading": "except:changes",
+      "path": "except:changes"
+    },
+    {
+      "file": "deprecated_keywords.md",
+      "heading": "only:kubernetes",
+      "path": "only:kubernetes"
+    },
+    {
+      "file": "deprecated_keywords.md",
+      "heading": "except:kubernetes",
+      "path": "except:kubernetes"
+    },
+    {
+      "file": "deprecated_keywords.md",
+      "heading": "publish",
+      "path": "publish"
+    },
+    {
+      "file": "deprecated_keywords.md",
+      "heading": "pages",
+      "path": "pages"
+    },
+    {
+      "file": "deprecated_keywords.md",
+      "heading": "environment:kubernetes:namespace",
+      "path": "environment:kubernetes:namespace"
+    },
+    {
+      "file": "deprecated_keywords.md",
+      "heading": "environment:kubernetes:flux_resource_path",
+      "path": "environment:kubernetes:flux_resource_path"
+    }
+  ]
+}

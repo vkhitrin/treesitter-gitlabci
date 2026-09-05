@@ -1,0 +1,46 @@
+{
+  "name": "tree-sitter-gitlab-ci",
+  "version": "0.1.0",
+  "description": "GitLab CI grammar for Tree-sitter, including YAML, configuration expressions, and conditions",
+  "license": "MIT",
+  "main": "bindings/node",
+  "files": [
+    "grammar.js",
+    "tree-sitter.json",
+    "binding.gyp",
+    "bindings/node",
+    "src",
+    "vendor",
+    "queries",
+    "data",
+    "gitlab-ci-reference.lock.json",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
+    "scripts/install.cjs"
+  ],
+  "scripts": {
+    "install": "node scripts/install.cjs"
+  },
+  "dependencies": {
+    "node-addon-api": "8.9.2",
+    "node-gyp-build": "4.8.4"
+  },
+  "devDependencies": {
+    "node-gyp": "13.0.2",
+    "tree-sitter": "0.25.1",
+    "tree-sitter-cli": "0.27.0",
+    "yaml": "2.9.0"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.25.0"
+  },
+  "peerDependenciesMeta": {
+    "tree-sitter": {
+      "optional": true
+    }
+  },
+  "packageManager": "pnpm@11.25.0",
+  "gitlabCiReference": {
+    "revision": "d2a2c734eb11154c28887bb0522f07866742886e"
+  }
+}

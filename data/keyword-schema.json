@@ -1,0 +1,1689 @@
+{
+  "revision": "d2a2c734eb11154c28887bb0522f07866742886e",
+  "schema": {
+    "properties": {
+      "$schema": {},
+      "spec": {
+        "properties": {
+          "inputs": {
+            "$ref": "#/definitions/configInputs"
+          },
+          "include": {
+            "items": {
+              "$ref": "#/definitions/spec_include_item"
+            }
+          },
+          "component": {
+            "items": {}
+          },
+          "description": {}
+        },
+        "additionalProperties": false
+      },
+      "image": {
+        "$ref": "#/definitions/image"
+      },
+      "services": {
+        "$ref": "#/definitions/services"
+      },
+      "before_script": {
+        "$ref": "#/definitions/before_script"
+      },
+      "after_script": {
+        "$ref": "#/definitions/after_script"
+      },
+      "variables": {
+        "$ref": "#/definitions/globalVariables"
+      },
+      "cache": {
+        "$ref": "#/definitions/cache"
+      },
+      "!reference": {
+        "$ref": "#/definitions/!reference"
+      },
+      "default": {
+        "properties": {
+          "after_script": {
+            "$ref": "#/definitions/after_script"
+          },
+          "artifacts": {
+            "$ref": "#/definitions/artifacts"
+          },
+          "before_script": {
+            "$ref": "#/definitions/before_script"
+          },
+          "hooks": {
+            "$ref": "#/definitions/hooks"
+          },
+          "cache": {
+            "$ref": "#/definitions/cache"
+          },
+          "image": {
+            "$ref": "#/definitions/image"
+          },
+          "interruptible": {
+            "$ref": "#/definitions/interruptible"
+          },
+          "id_tokens": {
+            "$ref": "#/definitions/id_tokens"
+          },
+          "identity": {
+            "$ref": "#/definitions/identity"
+          },
+          "retry": {
+            "$ref": "#/definitions/retry"
+          },
+          "services": {
+            "$ref": "#/definitions/services"
+          },
+          "tags": {
+            "$ref": "#/definitions/tags"
+          },
+          "timeout": {
+            "$ref": "#/definitions/timeout"
+          },
+          "!reference": {
+            "$ref": "#/definitions/!reference"
+          }
+        },
+        "additionalProperties": false
+      },
+      "stages": {
+        "items": {
+          "anyOf": [
+            {},
+            {
+              "items": {}
+            }
+          ]
+        }
+      },
+      "include": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/include_item"
+          },
+          {
+            "items": {
+              "$ref": "#/definitions/include_item"
+            }
+          }
+        ]
+      },
+      "pages": {
+        "$ref": "#/definitions/job"
+      },
+      "workflow": {
+        "properties": {
+          "name": {
+            "$ref": "#/definitions/workflowName"
+          },
+          "auto_cancel": {
+            "$ref": "#/definitions/workflowAutoCancel"
+          },
+          "rules": {
+            "items": {
+              "anyOf": [
+                {},
+                {
+                  "items": {}
+                }
+              ],
+              "properties": {
+                "if": {
+                  "$ref": "#/definitions/if"
+                },
+                "changes": {
+                  "$ref": "#/definitions/changes"
+                },
+                "exists": {
+                  "$ref": "#/definitions/exists"
+                },
+                "variables": {
+                  "$ref": "#/definitions/rulesVariables"
+                },
+                "when": {},
+                "auto_cancel": {
+                  "$ref": "#/definitions/workflowAutoCancel"
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        }
+      }
+    },
+    "patternProperties": {
+      "^[.]": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/job_template"
+          },
+          {}
+        ]
+      }
+    },
+    "additionalProperties": {
+      "$ref": "#/definitions/job"
+    },
+    "definitions": {
+      "artifacts": {
+        "additionalProperties": false,
+        "then": {},
+        "properties": {
+          "paths": {
+            "items": {}
+          },
+          "exclude": {
+            "items": {}
+          },
+          "expose_as": {},
+          "name": {},
+          "untracked": {},
+          "when": {},
+          "access": {},
+          "public": {},
+          "expire_in": {},
+          "reports": {
+            "additionalProperties": false,
+            "properties": {
+              "accessibility": {},
+              "annotations": {},
+              "api_fuzzing": {
+                "$ref": "#/definitions/string_file_list"
+              },
+              "junit": {
+                "oneOf": [
+                  {},
+                  {
+                    "items": {}
+                  }
+                ]
+              },
+              "browser_performance": {},
+              "coverage_report": {
+                "properties": {
+                  "coverage_format": {},
+                  "path": {}
+                }
+              },
+              "coverage_fuzzing": {
+                "$ref": "#/definitions/string_file_list"
+              },
+              "codequality": {
+                "$ref": "#/definitions/string_file_list"
+              },
+              "dotenv": {
+                "$ref": "#/definitions/string_file_list"
+              },
+              "lsif": {
+                "$ref": "#/definitions/string_file_list"
+              },
+              "sast": {
+                "$ref": "#/definitions/string_file_list"
+              },
+              "dependency_scanning": {
+                "$ref": "#/definitions/string_file_list"
+              },
+              "container_scanning": {
+                "$ref": "#/definitions/string_file_list"
+              },
+              "dast": {
+                "$ref": "#/definitions/string_file_list"
+              },
+              "license_management": {
+                "$ref": "#/definitions/string_file_list"
+              },
+              "license_scanning": {
+                "$ref": "#/definitions/string_file_list"
+              },
+              "requirements": {
+                "$ref": "#/definitions/string_file_list"
+              },
+              "secret_detection": {
+                "$ref": "#/definitions/string_file_list"
+              },
+              "metrics": {
+                "$ref": "#/definitions/string_file_list"
+              },
+              "terraform": {
+                "$ref": "#/definitions/string_file_list"
+              },
+              "cyclonedx": {
+                "$ref": "#/definitions/string_file_list"
+              },
+              "sarif": {
+                "$ref": "#/definitions/string_file_list"
+              },
+              "load_performance": {
+                "$ref": "#/definitions/string_file_list"
+              },
+              "repository_xray": {
+                "$ref": "#/definitions/string_file_list"
+              }
+            }
+          }
+        }
+      },
+      "string_file_list": {
+        "oneOf": [
+          {},
+          {
+            "items": {}
+          }
+        ]
+      },
+      "baseInput": {
+        "properties": {
+          "type": {},
+          "description": {},
+          "options": {
+            "items": {
+              "oneOf": [
+                {},
+                {},
+                {}
+              ]
+            }
+          },
+          "regex": {},
+          "default": {}
+        }
+      },
+      "configInputs": {
+        "patternProperties": {
+          ".*": {
+            "oneOf": [
+              {
+                "allOf": [
+                  {
+                    "$ref": "#/definitions/baseInput"
+                  },
+                  {
+                    "properties": {
+                      "rules": {
+                        "items": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "if": {},
+                            "options": {
+                              "items": {
+                                "oneOf": [
+                                  {},
+                                  {},
+                                  {}
+                                ]
+                              }
+                            },
+                            "default": {}
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "then": {}
+                  },
+                  {
+                    "allOf": [
+                      {
+                        "then": {
+                          "properties": {
+                            "default": {}
+                          }
+                        }
+                      },
+                      {
+                        "then": {
+                          "properties": {
+                            "default": {}
+                          }
+                        }
+                      },
+                      {
+                        "then": {
+                          "properties": {
+                            "default": {}
+                          }
+                        }
+                      },
+                      {
+                        "then": {
+                          "properties": {
+                            "default": {
+                              "oneOf": [
+                                {},
+                                {}
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "then": {
+                          "properties": {
+                            "default": {}
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {}
+            ]
+          }
+        }
+      },
+      "jobInputs": {
+        "patternProperties": {
+          ".*": {
+            "allOf": [
+              {
+                "$ref": "#/definitions/baseInput"
+              },
+              {},
+              {
+                "allOf": [
+                  {
+                    "then": {
+                      "properties": {
+                        "default": {}
+                      }
+                    }
+                  },
+                  {
+                    "then": {
+                      "properties": {
+                        "default": {}
+                      }
+                    }
+                  },
+                  {
+                    "then": {
+                      "properties": {
+                        "default": {}
+                      }
+                    }
+                  },
+                  {
+                    "then": {
+                      "properties": {
+                        "default": {}
+                      }
+                    }
+                  },
+                  {
+                    "then": {
+                      "properties": {
+                        "default": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "include_item": {
+        "oneOf": [
+          {
+            "anyOf": [
+              {},
+              {}
+            ]
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "local": {},
+              "rules": {
+                "$ref": "#/definitions/includeRules"
+              },
+              "inputs": {
+                "$ref": "#/definitions/inputs"
+              }
+            }
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "project": {},
+              "ref": {},
+              "file": {
+                "oneOf": [
+                  {},
+                  {
+                    "items": {}
+                  }
+                ]
+              },
+              "rules": {
+                "$ref": "#/definitions/includeRules"
+              },
+              "inputs": {
+                "$ref": "#/definitions/inputs"
+              }
+            }
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "template": {},
+              "rules": {
+                "$ref": "#/definitions/includeRules"
+              },
+              "inputs": {
+                "$ref": "#/definitions/inputs"
+              }
+            }
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "component": {},
+              "rules": {
+                "$ref": "#/definitions/includeRules"
+              },
+              "inputs": {
+                "$ref": "#/definitions/inputs"
+              }
+            }
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "remote": {},
+              "integrity": {},
+              "cache": {
+                "$ref": "#/definitions/include_cache"
+              },
+              "rules": {
+                "$ref": "#/definitions/includeRules"
+              },
+              "inputs": {
+                "$ref": "#/definitions/inputs"
+              }
+            }
+          }
+        ]
+      },
+      "include_cache": {
+        "oneOf": [
+          {},
+          {}
+        ]
+      },
+      "spec_include_item": {
+        "oneOf": [
+          {
+            "additionalProperties": false,
+            "properties": {
+              "local": {}
+            }
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "project": {},
+              "ref": {},
+              "file": {
+                "oneOf": [
+                  {},
+                  {
+                    "items": {}
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "remote": {},
+              "integrity": {},
+              "cache": {
+                "$ref": "#/definitions/include_cache"
+              }
+            }
+          }
+        ]
+      },
+      "!reference": {
+        "items": {}
+      },
+      "image": {
+        "oneOf": [
+          {},
+          {
+            "additionalProperties": false,
+            "properties": {
+              "name": {},
+              "entrypoint": {},
+              "docker": {
+                "additionalProperties": false,
+                "properties": {
+                  "platform": {},
+                  "user": {}
+                }
+              },
+              "kubernetes": {
+                "additionalProperties": false,
+                "properties": {
+                  "user": {}
+                }
+              },
+              "pull_policy": {
+                "oneOf": [
+                  {},
+                  {
+                    "items": {}
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "services": {
+        "items": {
+          "oneOf": [
+            {},
+            {
+              "additionalProperties": false,
+              "properties": {
+                "name": {},
+                "entrypoint": {
+                  "items": {}
+                },
+                "docker": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "platform": {},
+                    "user": {}
+                  }
+                },
+                "kubernetes": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "user": {}
+                  }
+                },
+                "pull_policy": {
+                  "oneOf": [
+                    {},
+                    {
+                      "items": {}
+                    }
+                  ]
+                },
+                "command": {
+                  "$ref": "#/definitions/script"
+                },
+                "alias": {},
+                "variables": {
+                  "$ref": "#/definitions/jobVariables"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "id_tokens": {
+        "patternProperties": {
+          ".*": {
+            "properties": {
+              "aud": {
+                "oneOf": [
+                  {},
+                  {
+                    "items": {}
+                  }
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "identity": {},
+      "dast_configuration": {
+        "additionalProperties": false,
+        "properties": {
+          "site_profile": {},
+          "scanner_profile": {}
+        }
+      },
+      "secrets": {
+        "patternProperties": {
+          ".*": {
+            "properties": {
+              "vault": {
+                "oneOf": [
+                  {},
+                  {
+                    "properties": {
+                      "engine": {
+                        "properties": {
+                          "name": {},
+                          "path": {}
+                        }
+                      },
+                      "path": {},
+                      "field": {}
+                    },
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "gcp_secret_manager": {
+                "properties": {
+                  "name": {},
+                  "version": {
+                    "oneOf": [
+                      {},
+                      {}
+                    ]
+                  }
+                },
+                "additionalProperties": false
+              },
+              "azure_key_vault": {
+                "properties": {
+                  "name": {},
+                  "version": {}
+                },
+                "additionalProperties": false
+              },
+              "aws_secrets_manager": {
+                "oneOf": [
+                  {},
+                  {
+                    "properties": {
+                      "secret_id": {},
+                      "version_id": {},
+                      "version_stage": {},
+                      "region": {},
+                      "role_arn": {},
+                      "role_session_name": {},
+                      "field": {}
+                    },
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "gitlab_secrets_manager": {
+                "properties": {
+                  "name": {},
+                  "source": {}
+                },
+                "additionalProperties": false
+              },
+              "file": {},
+              "token": {}
+            },
+            "anyOf": [
+              {},
+              {},
+              {},
+              {},
+              {}
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "script": {
+        "oneOf": [
+          {},
+          {
+            "items": {
+              "anyOf": [
+                {},
+                {
+                  "items": {}
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "steps": {
+        "items": {
+          "$ref": "#/definitions/step"
+        }
+      },
+      "optional_script": {
+        "oneOf": [
+          {},
+          {
+            "items": {
+              "anyOf": [
+                {},
+                {
+                  "items": {}
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "before_script": {
+        "$ref": "#/definitions/optional_script"
+      },
+      "after_script": {
+        "$ref": "#/definitions/optional_script"
+      },
+      "rules": {
+        "items": {
+          "anyOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "if": {
+                  "$ref": "#/definitions/if"
+                },
+                "changes": {
+                  "$ref": "#/definitions/changes"
+                },
+                "exists": {
+                  "$ref": "#/definitions/exists"
+                },
+                "variables": {
+                  "$ref": "#/definitions/rulesVariables"
+                },
+                "when": {
+                  "$ref": "#/definitions/when"
+                },
+                "start_in": {
+                  "$ref": "#/definitions/start_in"
+                },
+                "allow_failure": {
+                  "$ref": "#/definitions/rulesAllowFailure"
+                },
+                "needs": {
+                  "$ref": "#/definitions/rulesNeeds"
+                },
+                "interruptible": {
+                  "$ref": "#/definitions/interruptible"
+                }
+              }
+            },
+            {},
+            {
+              "items": {}
+            }
+          ]
+        }
+      },
+      "includeRules": {
+        "items": {
+          "anyOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "if": {
+                  "$ref": "#/definitions/if"
+                },
+                "changes": {
+                  "$ref": "#/definitions/changes"
+                },
+                "exists": {
+                  "$ref": "#/definitions/exists"
+                },
+                "when": {
+                  "oneOf": [
+                    {},
+                    {}
+                  ]
+                }
+              }
+            },
+            {},
+            {
+              "items": {}
+            }
+          ]
+        }
+      },
+      "workflowName": {},
+      "workflowAutoCancel": {
+        "additionalProperties": false,
+        "properties": {
+          "on_job_failure": {},
+          "on_new_commit": {}
+        }
+      },
+      "globalVariables": {
+        "patternProperties": {
+          ".*": {
+            "oneOf": [
+              {},
+              {
+                "properties": {
+                  "value": {},
+                  "options": {
+                    "items": {}
+                  },
+                  "description": {},
+                  "expand": {}
+                },
+                "additionalProperties": false
+              }
+            ]
+          }
+        }
+      },
+      "jobVariables": {
+        "patternProperties": {
+          ".*": {
+            "oneOf": [
+              {},
+              {
+                "properties": {
+                  "value": {},
+                  "expand": {}
+                },
+                "additionalProperties": false
+              }
+            ]
+          }
+        }
+      },
+      "rulesVariables": {
+        "patternProperties": {
+          ".*": {}
+        }
+      },
+      "if": {},
+      "changes": {
+        "anyOf": [
+          {
+            "additionalProperties": false,
+            "oneOf": [
+              {},
+              {}
+            ],
+            "properties": {
+              "paths": {
+                "items": {}
+              },
+              "compare_to": {},
+              "regexp": {}
+            }
+          },
+          {
+            "items": {}
+          }
+        ]
+      },
+      "exists": {
+        "anyOf": [
+          {
+            "items": {}
+          },
+          {
+            "additionalProperties": false,
+            "oneOf": [
+              {},
+              {}
+            ],
+            "properties": {
+              "paths": {
+                "items": {}
+              },
+              "project": {},
+              "regexp": {}
+            }
+          },
+          {
+            "additionalProperties": false,
+            "oneOf": [
+              {},
+              {}
+            ],
+            "properties": {
+              "paths": {
+                "items": {}
+              },
+              "project": {},
+              "ref": {},
+              "regexp": {}
+            }
+          }
+        ]
+      },
+      "timeout": {},
+      "start_in": {},
+      "rulesNeeds": {
+        "items": {
+          "oneOf": [
+            {},
+            {
+              "additionalProperties": false,
+              "properties": {
+                "job": {},
+                "artifacts": {},
+                "optional": {}
+              }
+            }
+          ]
+        }
+      },
+      "allow_failure": {
+        "oneOf": [
+          {},
+          {
+            "additionalProperties": false,
+            "properties": {
+              "exit_codes": {}
+            }
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "exit_codes": {
+                "items": {}
+              }
+            }
+          }
+        ]
+      },
+      "rulesAllowFailure": {},
+      "parallel": {
+        "oneOf": [
+          {},
+          {
+            "properties": {
+              "matrix": {
+                "items": {
+                  "additionalProperties": {}
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "parallel_matrix": {
+        "oneOf": [
+          {
+            "properties": {
+              "matrix": {
+                "items": {
+                  "additionalProperties": {}
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "when": {},
+      "cache": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/cache_item"
+          },
+          {
+            "items": {
+              "$ref": "#/definitions/cache_item"
+            }
+          }
+        ]
+      },
+      "cache_item": {
+        "properties": {
+          "key": {
+            "oneOf": [
+              {},
+              {
+                "properties": {
+                  "files": {
+                    "items": {}
+                  },
+                  "files_commits": {
+                    "items": {}
+                  },
+                  "prefix": {}
+                }
+              }
+            ]
+          },
+          "paths": {
+            "items": {}
+          },
+          "policy": {},
+          "unprotect": {},
+          "untracked": {},
+          "when": {},
+          "fallback_keys": {
+            "items": {}
+          }
+        }
+      },
+      "filter_refs": {
+        "items": {
+          "anyOf": [
+            {
+              "oneOf": [
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {}
+              ]
+            },
+            {}
+          ]
+        }
+      },
+      "filter": {
+        "oneOf": [
+          {},
+          {
+            "$ref": "#/definitions/filter_refs"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "refs": {
+                "$ref": "#/definitions/filter_refs"
+              },
+              "kubernetes": {},
+              "variables": {
+                "items": {}
+              },
+              "changes": {
+                "items": {}
+              }
+            }
+          }
+        ]
+      },
+      "retry": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/retry_max"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "max": {
+                "$ref": "#/definitions/retry_max"
+              },
+              "when": {
+                "oneOf": [
+                  {
+                    "$ref": "#/definitions/retry_errors"
+                  },
+                  {
+                    "items": {
+                      "$ref": "#/definitions/retry_errors"
+                    }
+                  }
+                ]
+              },
+              "exit_codes": {
+                "oneOf": [
+                  {
+                    "items": {}
+                  },
+                  {}
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "retry_max": {},
+      "retry_errors": {
+        "oneOf": [
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {},
+          {}
+        ]
+      },
+      "interruptible": {},
+      "inputs": {
+        "patternProperties": {
+          "^[a-zA-Z0-9_-]+$": {
+            "oneOf": [
+              {},
+              {},
+              {},
+              {
+                "items": {
+                  "oneOf": [
+                    {},
+                    {},
+                    {},
+                    {
+                      "additionalProperties": true
+                    },
+                    {
+                      "items": {
+                        "additionalProperties": true
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "additionalProperties": true
+              },
+              {}
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "job": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/job_template"
+          }
+        ]
+      },
+      "job_template": {
+        "additionalProperties": false,
+        "properties": {
+          "image": {
+            "$ref": "#/definitions/image"
+          },
+          "services": {
+            "$ref": "#/definitions/services"
+          },
+          "before_script": {
+            "$ref": "#/definitions/before_script"
+          },
+          "after_script": {
+            "$ref": "#/definitions/after_script"
+          },
+          "hooks": {
+            "$ref": "#/definitions/hooks"
+          },
+          "rules": {
+            "$ref": "#/definitions/rules"
+          },
+          "variables": {
+            "$ref": "#/definitions/jobVariables"
+          },
+          "cache": {
+            "$ref": "#/definitions/cache"
+          },
+          "id_tokens": {
+            "$ref": "#/definitions/id_tokens"
+          },
+          "identity": {
+            "$ref": "#/definitions/identity"
+          },
+          "dast_configuration": {
+            "$ref": "#/definitions/dast_configuration"
+          },
+          "inputs": {
+            "$ref": "#/definitions/jobInputs"
+          },
+          "secrets": {
+            "$ref": "#/definitions/secrets"
+          },
+          "script": {
+            "$ref": "#/definitions/script"
+          },
+          "run": {
+            "$ref": "#/definitions/steps"
+          },
+          "stage": {
+            "anyOf": [
+              {},
+              {
+                "items": {}
+              }
+            ]
+          },
+          "only": {
+            "$ref": "#/definitions/filter"
+          },
+          "extends": {
+            "oneOf": [
+              {},
+              {
+                "items": {}
+              }
+            ]
+          },
+          "needs": {
+            "items": {
+              "oneOf": [
+                {},
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "job": {},
+                    "artifacts": {},
+                    "optional": {},
+                    "parallel": {
+                      "$ref": "#/definitions/parallel_matrix"
+                    }
+                  }
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "pipeline": {},
+                    "job": {},
+                    "artifacts": {},
+                    "parallel": {
+                      "$ref": "#/definitions/parallel_matrix"
+                    }
+                  }
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "job": {},
+                    "project": {},
+                    "ref": {},
+                    "artifacts": {},
+                    "parallel": {
+                      "$ref": "#/definitions/parallel_matrix"
+                    }
+                  }
+                },
+                {
+                  "$ref": "#/definitions/!reference"
+                }
+              ]
+            }
+          },
+          "except": {
+            "$ref": "#/definitions/filter"
+          },
+          "tags": {
+            "$ref": "#/definitions/tags"
+          },
+          "allow_failure": {
+            "$ref": "#/definitions/allow_failure"
+          },
+          "timeout": {
+            "$ref": "#/definitions/timeout"
+          },
+          "when": {
+            "$ref": "#/definitions/when"
+          },
+          "start_in": {
+            "$ref": "#/definitions/start_in"
+          },
+          "manual_confirmation": {},
+          "dependencies": {
+            "items": {}
+          },
+          "artifacts": {
+            "$ref": "#/definitions/artifacts"
+          },
+          "environment": {
+            "oneOf": [
+              {},
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "name": {},
+                  "url": {},
+                  "on_stop": {},
+                  "action": {},
+                  "auto_stop_in": {},
+                  "kubernetes": {
+                    "properties": {
+                      "agent": {},
+                      "namespace": {},
+                      "flux_resource_path": {},
+                      "managed_resources": {
+                        "properties": {
+                          "enabled": {}
+                        }
+                      },
+                      "dashboard": {
+                        "properties": {
+                          "namespace": {},
+                          "flux_resource_path": {}
+                        }
+                      }
+                    }
+                  },
+                  "deployment_tier": {}
+                }
+              }
+            ]
+          },
+          "release": {
+            "additionalProperties": false,
+            "properties": {
+              "tag_name": {},
+              "tag_message": {},
+              "description": {},
+              "name": {},
+              "ref": {},
+              "milestones": {
+                "items": {}
+              },
+              "released_at": {},
+              "assets": {
+                "additionalProperties": false,
+                "properties": {
+                  "links": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "name": {},
+                        "url": {},
+                        "filepath": {},
+                        "link_type": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "coverage": {},
+          "retry": {
+            "$ref": "#/definitions/retry"
+          },
+          "parallel": {
+            "$ref": "#/definitions/parallel"
+          },
+          "interruptible": {
+            "$ref": "#/definitions/interruptible"
+          },
+          "resource_group": {},
+          "trigger": {
+            "oneOf": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "project": {},
+                  "branch": {},
+                  "strategy": {},
+                  "inputs": {
+                    "$ref": "#/definitions/inputs"
+                  },
+                  "forward": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "yaml_variables": {},
+                      "pipeline_variables": {}
+                    }
+                  }
+                }
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "include": {
+                    "oneOf": [
+                      {},
+                      {
+                        "items": {
+                          "oneOf": [
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "local": {},
+                                "inputs": {
+                                  "$ref": "#/definitions/inputs"
+                                }
+                              }
+                            },
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "template": {},
+                                "inputs": {
+                                  "$ref": "#/definitions/inputs"
+                                }
+                              }
+                            },
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "artifact": {},
+                                "job": {},
+                                "inputs": {
+                                  "$ref": "#/definitions/inputs"
+                                }
+                              }
+                            },
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "project": {},
+                                "ref": {},
+                                "file": {},
+                                "inputs": {
+                                  "$ref": "#/definitions/inputs"
+                                }
+                              }
+                            },
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "component": {},
+                                "inputs": {
+                                  "$ref": "#/definitions/inputs"
+                                }
+                              }
+                            },
+                            {
+                              "additionalProperties": false,
+                              "properties": {
+                                "remote": {},
+                                "inputs": {
+                                  "$ref": "#/definitions/inputs"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "strategy": {},
+                  "forward": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "yaml_variables": {},
+                      "pipeline_variables": {}
+                    }
+                  }
+                }
+              },
+              {}
+            ]
+          },
+          "inherit": {
+            "properties": {
+              "default": {
+                "oneOf": [
+                  {},
+                  {
+                    "items": {}
+                  }
+                ]
+              },
+              "variables": {
+                "oneOf": [
+                  {},
+                  {
+                    "items": {}
+                  }
+                ]
+              }
+            },
+            "additionalProperties": false
+          },
+          "publish": {},
+          "pages": {
+            "oneOf": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "path_prefix": {},
+                  "expire_in": {},
+                  "publish": {}
+                }
+              },
+              {}
+            ]
+          }
+        },
+        "oneOf": [
+          {
+            "properties": {
+              "when": {}
+            }
+          },
+          {
+            "properties": {
+              "when": {}
+            }
+          }
+        ]
+      },
+      "tags": {
+        "items": {
+          "anyOf": [
+            {},
+            {
+              "items": {}
+            }
+          ]
+        }
+      },
+      "hooks": {
+        "properties": {
+          "pre_get_sources_script": {
+            "$ref": "#/definitions/optional_script"
+          }
+        },
+        "additionalProperties": false
+      },
+      "step": {
+        "oneOf": [
+          {
+            "additionalProperties": false,
+            "oneOf": [
+              {},
+              {}
+            ],
+            "properties": {
+              "name": {
+                "$ref": "#/definitions/stepName"
+              },
+              "env": {
+                "$ref": "#/definitions/stepNamedStrings"
+              },
+              "inputs": {
+                "$ref": "#/definitions/stepNamedValues"
+              },
+              "step": {
+                "$ref": "#/definitions/stepFuncReference"
+              },
+              "func": {
+                "$ref": "#/definitions/stepFuncReference"
+              }
+            }
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "$ref": "#/definitions/stepName"
+              },
+              "env": {
+                "$ref": "#/definitions/stepNamedStrings"
+              },
+              "script": {}
+            }
+          }
+        ]
+      },
+      "stepName": {},
+      "stepNamedStrings": {
+        "patternProperties": {
+          "^[a-zA-Z_][a-zA-Z0-9_]*$": {}
+        },
+        "additionalProperties": false
+      },
+      "stepNamedValues": {
+        "patternProperties": {
+          "^[a-zA-Z_][a-zA-Z0-9_]*$": {}
+        },
+        "additionalProperties": false
+      },
+      "stepGitReference": {
+        "additionalProperties": false,
+        "properties": {
+          "git": {
+            "additionalProperties": false,
+            "properties": {
+              "url": {},
+              "dir": {},
+              "rev": {},
+              "file": {}
+            }
+          }
+        }
+      },
+      "stepOciReference": {
+        "additionalProperties": false,
+        "properties": {
+          "oci": {
+            "additionalProperties": false,
+            "properties": {
+              "registry": {},
+              "repository": {},
+              "tag": {},
+              "dir": {},
+              "file": {}
+            }
+          }
+        }
+      },
+      "stepFuncReference": {
+        "oneOf": [
+          {},
+          {
+            "$ref": "#/definitions/stepGitReference"
+          },
+          {
+            "$ref": "#/definitions/stepOciReference"
+          }
+        ]
+      }
+    }
+  }
+}

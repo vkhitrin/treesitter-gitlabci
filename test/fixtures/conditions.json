@@ -1,0 +1,57 @@
+[
+  {
+    "name": "variable comparisons",
+    "source": "$A == \"value\" && $B != null",
+    "expected": "(condition (binary_expression (binary_expression (variable) (string (string_content))) (binary_expression (variable) (null))))"
+  },
+  {
+    "name": "variable equality",
+    "source": "$A == $B",
+    "expected": "(condition (binary_expression (variable) (variable)))"
+  },
+  {
+    "name": "or and precedence",
+    "source": "$A || $B && $C",
+    "expected": "(condition (binary_expression (variable) (binary_expression (variable) (variable))))"
+  },
+  {
+    "name": "nested parentheses",
+    "source": "($A || ($B && $C)) && $D",
+    "expected": "(condition (binary_expression (parenthesized_expression (binary_expression (variable) (parenthesized_expression (binary_expression (variable) (variable))))) (variable)))"
+  },
+  {
+    "name": "negation",
+    "source": "!($A == \"no\") && !$B",
+    "expected": "(condition (binary_expression (unary_expression (parenthesized_expression (binary_expression (variable) (string (string_content))))) (unary_expression (variable))))"
+  },
+  {
+    "name": "regex and flags",
+    "source": "$A =~ /^release\\/[0-9.]+$/i && $B !~ $PATTERN",
+    "expected": "(condition (binary_expression (binary_expression (variable) (regex (regex_content) (regex_escape) (character_class) (regex_content) (regex_flags))) (binary_expression (variable) (variable))))"
+  },
+  {
+    "name": "regex character class slash",
+    "source": "$A =~ /^[a-z/]+$/",
+    "expected": "(condition (binary_expression (variable) (regex (regex_content) (character_class) (regex_content))))"
+  },
+  {
+    "name": "input boolean comparison",
+    "source": "$[[ inputs.enabled ]] == true && $BRANCH",
+    "expected": "(condition (binary_expression (binary_expression (interpolation (access (identifier) (identifier))) (boolean)) (variable)))"
+  },
+  {
+    "name": "raw YAML single quotes",
+    "source": "'$A == ''value'''",
+    "expected": "(condition (binary_expression (variable) (yaml_string)))"
+  },
+  {
+    "name": "raw YAML double quotes",
+    "source": "\"$A == \\\"value\\\"\"",
+    "expected": "(condition (binary_expression (variable) (yaml_string)))"
+  },
+  {
+    "name": "raw YAML folded scalar",
+    "source": ">-\n    $A &&\n    $B",
+    "expected": "(condition (block_scalar_header) (binary_expression (variable) (variable)))"
+  }
+]

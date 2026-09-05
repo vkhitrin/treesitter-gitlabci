@@ -1,0 +1,77 @@
+spec:
+  inputs:
+    target:
+      type: string
+      rules:
+        - if: '$[[ inputs.production ]] == true'
+          options: [production]
+          default: production
+        - default: staging
+    production: {type: boolean, default: false}
+  include: [{local: input-definitions.yml}]
+---
+workflow:
+  auto_cancel: {on_new_commit: interruptible, on_job_failure: all}
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
+      auto_cancel: {on_new_commit: none}
+default:
+  id_tokens:
+    VAULT_TOKEN: {aud: 'https://vault.example.com'}
+  hooks:
+    pre_get_sources_script: ['echo setup']
+.legacy:
+  only:
+    refs: [branches]
+    variables: ['$ENABLED == "true"']
+    changes: ['src/**']
+    kubernetes: active
+  except: {variables: ['$DISABLED != null']}
+  script: echo legacy
+deploy:
+  inputs:
+    environment:
+      type: string
+      default: staging
+      description: Deployment environment
+      options: [staging, production]
+      regex: '^(staging|production)$'
+  environment:
+    name: staging
+    kubernetes:
+      agent: group/project:agent
+      dashboard: {namespace: staging, flux_resource_path: helm.toolkit.fluxcd.io/v2/namespaces/staging/helmreleases/app}
+    deployment_tier: staging
+  secrets:
+    PASSWORD:
+      vault:
+        engine: {name: kv-v2, path: ops}
+        path: production/database
+        field: password
+      file: false
+      token: $VAULT_TOKEN
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+      changes: {paths: ['src/**'], compare_to: main}
+      exists: {paths: [Dockerfile], project: group/project, ref: main}
+      needs: [{job: build, artifacts: true, optional: true}]
+  artifacts:
+    reports:
+      junit: report.xml
+      sarif: report.sarif
+      annotations: annotations.json
+      coverage_report: {coverage_format: cobertura, path: coverage.xml}
+  release:
+    tag_name: $CI_COMMIT_TAG
+    assets:
+      links: [{name: bundle, url: 'https://example.com/bundle.tgz', link_type: package, filepath: /bundle.tgz}]
+  run:
+    - name: publish
+      step: gitlab.com/components/publish@v1
+      inputs: {target: staging}
+      env: {LOG_LEVEL: info}
+child:
+  trigger:
+    include: [{local: child.yml, inputs: {target: staging}}]
+    strategy: mirror
+    forward: {yaml_variables: true, pipeline_variables: true}

@@ -1,0 +1,78 @@
+# Public, synthetic fixtures. No files from the validation repository are copied.
+spec:
+  component: [name, version, sha]
+  inputs:
+    job-stage:
+      default: test
+    servers:
+      type: array
+      default: [{host: example.com, port: 443}]
+    enabled:
+      type: boolean
+      default: true
+    tags:
+      default: docker,linux
+---
+include:
+  - component: $CI_SERVER_FQDN/components/check@1.0
+    inputs: {stage: test}
+    rules:
+      - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+stages: [build, test, deploy]
+workflow:
+  name: 'Pipeline for $CI_COMMIT_REF_NAME'
+  auto_cancel: {on_new_commit: interruptible}
+  rules:
+    - if: '$CI_COMMIT_TAG || ($CI_COMMIT_BRANCH && !$CI_OPEN_MERGE_REQUESTS)'
+default:
+  image: alpine:latest
+  before_script: &setup
+    - echo setup
+variables:
+  script: This is a user variable, not a job keyword
+  if: This is a user variable, not a rules expression
+  TARGET:
+    value: production
+    options: [production, staging]
+    description: Deployment target
+.base:
+  before_script: *setup
+  script:
+    - |
+      echo "Building $CI_PROJECT_PATH"
+      printf '%s\n' '$[[ inputs.servers[0].host ]]'
+"build:$[[ component.name ]]":
+  extends: .base
+  stage: build
+  parallel:
+    matrix:
+      - OS: [ubuntu, alpine]
+        ARCH: [amd64, arm64]
+  cache:
+    - key: {files: [package-lock.json], prefix: '$CI_COMMIT_REF_SLUG'}
+      paths: [node_modules/]
+  artifacts:
+    reports: {junit: report.xml}
+    expire_in: 1 week
+test:
+  stage: $[[ inputs.job-stage ]]
+  before_script: !reference [.base, before_script]
+  needs:
+    - job: 'build:$[[ component.name ]]'
+      parallel:
+        matrix:
+          - OS: ['$[[ matrix.OS ]]']
+            ARCH: ['$[[ matrix.ARCH ]]']
+  rules:
+    - if: $[[ inputs.enabled ]] == true && $CI_COMMIT_BRANCH != null
+    - if: >-
+        $CI_COMMIT_BRANCH =~ /^release\/[0-9.]+$/i &&
+        $CI_PIPELINE_SOURCE != "schedule"
+    - when: never
+  tags: $[[ inputs.tags | split(',') ]]
+  script: echo $[[ inputs.job-stage | expand_vars | truncate(0, 12) | posix_escape ]]
+deploy:
+  environment: {name: production, url: 'https://example.com'}
+  trigger: {include: child.gitlab-ci.yml, strategy: mirror}
+  when: manual
+  manual_confirmation: Deploy to production?
